@@ -1,74 +1,21 @@
 <head>
 <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:400,700" rel="stylesheet">
 <link href='style.css' rel='stylesheet' type='text/css'>
-<title>8values Results</title>
+<title>Sapply Results</title>
 <link rel="icon" type="x-icon" href="icon.png">
 <link rel="shortcut icon" type="x-icon" href="icon.png">
 <meta charset="utf-8">
-<script>
-  version = "Test Edition #1" //Remember to update this before making changes to the test itself!
-</script>
 </head>
-<script type="application/javascript"
-        src="ideologies.js">
-</script>
 
 <body>
-<h1>8values</h1>
+<h1>SapplyValues</h1>
 <hr>
 
 <h1>Results</h1>
 
-<h2>Economic Axis: <span class="weight-300" id="economic-label"></span></h2>
-<div class="axis">
-    <img id="img-equality" src="value_images/equality.svg" height="128pt"/>
-    <div class="bar equality" id="bar-equality"><div class="text-wrapper" id="equality"></div></div>
-    <div class="bar wealth" id="bar-wealth"><div class="text-wrapper" id="wealth"></div></div>
-    <img id="img-wealth" src="value_images/wealth.svg" height="128pt"/>
-</div>
-<h2>Diplomatic Axis: <span class="weight-300" id="diplomatic-label"></span></h2>
-<div class="axis">
-    <img id="img-might" src="value_images/might.svg" height="128pt"/>
-    <div class="bar might" id="bar-might"><div class="text-wrapper" id="might"></div></div>
-    <div class="bar peace" id="bar-peace"><div class="text-wrapper" id="peace"></div></div>
-    <img id="img-peace" src="value_images/peace.svg" height="128pt"/>
-</div>
-<h2>Civil Axis: <span class="weight-300" id="state-label"></span></h2>
-<div class="axis">
-    <img id="img-liberty" src="value_images/liberty.svg" height="128pt"/>
-    <div class="bar liberty" id="bar-liberty"><div class="text-wrapper" id="liberty"></div></div>
-    <div class="bar authority" id="bar-authority"><div class="text-wrapper" id="authority"></div></div>
-    <img id="img-authority" src="value_images/authority.svg" height="128pt"/>
-</div>
-<h2>Societal Axis: <span class="weight-300" id="society-label"></span></h2>
-<div class="axis">
-    <img id="img-tradition" src="value_images/tradition.svg" height="128pt"/>
-    <div class="bar tradition" id="bar-tradition"><div class="text-wrapper" id="tradition"></div></div>
-    <div class="bar progress" id="bar-progress"><div class="text-wrapper" id="progress"></div></div>
-    <img id="img-progress" src="value_images/progress.svg" height="128pt"/>
-</div>
-<h2>Closest Match: <span class="weight-300" id="ideology-label"></span></h2>
-<p>Ideological matching is a work in progress, and is much less accurate than the values and axes.</p>
-<p>You can send these results by copying and pasting the URL at the top of the page or using the image below. Think your matched ideology was wrong? Want to help us calibrate the test? Send the results along with your political ideology to us at eightvalues@gmail.com, or send us any comments, questions, or criticism. </p>
-<hr/>
-<img src="" id="banner">
+<img src="" id="banner"></canvas>
 <button class="button" onclick="location.href='index.html';" style="background-color: #2196f3;">Back</button> <br>
-<!-- Website visit statistics - no personal information is collected! -->
-<script type="text/javascript">
-var sc_project=11325211;
-var sc_invisible=1;
-var sc_security="fd9f0659";
-var scJsHost = (("https:" == document.location.protocol) ?
-"https://secure." : "http://www.");
-document.write("<sc"+"ript type='text/javascript' src='" +
-scJsHost+
-"statcounter.com/counter/counter.js'></"+"script>");
-</script>
-<noscript><div class="statcounter"><a title="web stats"
-href="http://statcounter.com/" target="_blank"><img
-class="statcounter"
-src="//c.statcounter.com/11325211/0/fd9f0659/1/" alt="web
-stats"></a></div></noscript>
+
 <script>
     function getQueryVariable(variable)
     {
@@ -81,153 +28,46 @@ stats"></a></div></noscript>
            return(NaN);
     }
 
-    function setBarValue(name, value) {
-        innerel = document.getElementById(name)
-        outerel = document.getElementById("bar-" + name)
-        outerel.style.width = (value + "%")
-        innerel.innerHTML = (value + "%")
-        if (innerel.offsetWidth + 20 > outerel.offsetWidth) {
-            innerel.style.visibility = "hidden"
-        }
-    }
-
-    econArray = ["Communist","Socialist","Social","Centrist","Market","Capitalist","Laissez-Faire"]
-    diplArray = ["Cosmopolitan","Internationalist","Peaceful","Balanced","Patriotic","Nationalist","Chauvinist"]
-    govtArray = ["Anarchist","Libertarian","Liberal","Moderate","Statist","Authoritarian","Totalitarian"]
-    sctyArray = ["Revolutionary","Very Progressive","Progressive","Neutral","Traditional","Very Traditional","Reactionary"]
-
-    function setLabel(val,ary) {
-        if (val > 100) { return "" } else
-        if (val > 90) { return ary[0] } else
-        if (val > 75) { return ary[1] } else
-        if (val > 60) { return ary[2] } else
-        if (val >= 40) { return ary[3] } else
-        if (val >= 25) { return ary[4] } else
-        if (val >= 10) { return ary[5] } else
-        if (val >= 0) { return ary[6] } else
-        	{return ""}
-    }
-
-    equality  = getQueryVariable("e")
-    peace     = getQueryVariable("d")
-    liberty   = getQueryVariable("g")
-    progress  = getQueryVariable("s")
-    wealth    = (100 - equality).toFixed(1)
-    might     = (100 - peace   ).toFixed(1)
-    authority = (100 - liberty ).toFixed(1)
-    tradition = (100 - progress).toFixed(1)
-
-    setBarValue("equality", equality)
-    setBarValue("wealth", wealth)
-    setBarValue("peace", peace)
-    setBarValue("might", might)
-    setBarValue("liberty", liberty)
-    setBarValue("authority", authority)
-    setBarValue("progress", progress)
-    setBarValue("tradition", tradition)
-
-    document.getElementById("economic-label").innerHTML = setLabel(equality, econArray)
-    document.getElementById("diplomatic-label").innerHTML = setLabel(peace, diplArray)
-    document.getElementById("state-label").innerHTML = setLabel(liberty, govtArray)
-    document.getElementById("society-label").innerHTML = setLabel(progress, sctyArray)
-
-    ideology = ""
-    ideodist = Infinity
-    for (var i = 0; i < ideologies.length; i++) {
-        dist = 0
-        dist += Math.pow(Math.abs(ideologies[i].stats.econ - equality), 2)
-        dist += Math.pow(Math.abs(ideologies[i].stats.govt - liberty), 2)
-        dist += Math.pow(Math.abs(ideologies[i].stats.dipl - peace), 1.73856063)
-        dist += Math.pow(Math.abs(ideologies[i].stats.scty - progress), 1.73856063)
-        if (dist < ideodist) {
-            ideology = ideologies[i].name
-            ideodist = dist
-        }
-    }
-    document.getElementById("ideology-label").innerHTML = ideology
-
-    function createImage(src, x, y, w, h) {
-        img = new Image ()
-        img.src = src
-        img.onLoad = function() {
-            ctx.drawImage(img, x, y, w, h)
-        }
-    }
+    x_axis  = parseFloat(getQueryVariable("x"))
+    y_axis   = parseFloat(getQueryVariable("y"))
+    z_axis  = parseFloat(getQueryVariable("z"))
 
     window.onload = function() {
-        var c = document.createElement("canvas")
-        var ctx = c.getContext("2d")
-        c.width = 800;
-        c.height = 650;
-        ctx.fillStyle = "#EEEEEE"
-        ctx.fillRect(0,0,800,650);
+        var background = new Image();
+        background.onload = function() {
+            var c = document.createElement("canvas");
+            c.width = 1850;
+            c.height = 1600;
+            var ctx = c.getContext("2d");
+            ctx.fillStyle = "#EEEEEE"
+            ctx.fillRect(0, 0, 1850, 1600);
+            ctx.drawImage(background, 0, 0);
 
-        img = document.getElementById("img-equality")
-        ctx.drawImage(img, 20, 170, 100, 100);
-        img = document.getElementById("img-wealth")
-        ctx.drawImage(img, 680, 170, 100, 100)
-        img = document.getElementById("img-might")
-        ctx.drawImage(img, 20, 290, 100, 100)
-        img = document.getElementById("img-peace")
-        ctx.drawImage(img, 680, 290, 100, 100)
-        img = document.getElementById("img-liberty")
-        ctx.drawImage(img, 20, 410, 100, 100)
-        img = document.getElementById("img-authority")
-        ctx.drawImage(img, 680, 410, 100, 100)
-        img = document.getElementById("img-tradition")
-        ctx.drawImage(img, 20, 530, 100, 100)
-        img = document.getElementById("img-progress")
-        ctx.drawImage(img, 680, 530, 100, 100)
+            var dot = c.getContext("2d");
+            dot.beginPath();
+            dot.arc(200 + (1000 * (x_axis+10)/20), 150 + (1000 * (y_axis + 10)/20), 25, 0, 2 * Math.PI);
+            dot.fillStyle = 'red';
+            dot.fill();
+            dot.stroke();
 
-        ctx.fillStyle="#222222"
-        ctx.fillRect(120, 180, 560, 80)
-        ctx.fillRect(120, 300, 560, 80)
-        ctx.fillRect(120, 420, 560, 80)
-        ctx.fillRect(120, 540, 560, 80)
-        ctx.fillStyle="#f44336"
-        ctx.fillRect(120, 184, 5.6*equality-2, 72)
-        ctx.fillStyle="#00897b"
-        ctx.fillRect(682-5.6*wealth, 184, 5.6*wealth-2, 72)
-        ctx.fillStyle="#ff9800"
-        ctx.fillRect(120, 304, 5.6*might-2, 72)
-        ctx.fillStyle="#03a9f4"
-        ctx.fillRect(682-5.6*peace, 304, 5.6*peace-2, 72)
-        ctx.fillStyle="#ffeb3b"
-        ctx.fillRect(120, 424, 5.6*liberty-2, 72)
-        ctx.fillStyle="#3f51b5"
-        ctx.fillRect(682-5.6*authority, 424, 5.6*authority-2, 72)
-        ctx.fillStyle="#8bc34a"
-        ctx.fillRect(120, 544, 5.6*tradition-2, 72)
-        ctx.fillStyle="#9c27b0"
-        ctx.fillRect(682-5.6*progress, 544, 5.6*progress-2, 72)
-        ctx.fillStyle="#222222"
-        ctx.font="700 80px Montserrat"
-        ctx.textAlign="left"
-        ctx.fillText("8values", 20, 90)
-        ctx.font="50px Montserrat"
-        ctx.fillText(ideology, 20, 140)
+            var line = c.getContext("2d");
+            line.beginPath();
+            line.moveTo(1500, 1145 - (1000 * (z_axis + 16)/32));
+            line.lineTo(1650, 1145 - (1000 * (z_axis + 16)/32));
+            line.lineWidth = 10;
+            line.strokeStyle = "red";
+            line.stroke();
 
-        ctx.textAlign="left"
-        if (equality  > 30) {ctx.fillText(equality + "%", 130, 237.5)}
-        if (might     > 30) {ctx.fillText(might + "%", 130, 357.5)}
-        if (liberty   > 30) {ctx.fillText(liberty + "%", 130, 477.5)}
-        if (tradition > 30) {ctx.fillText(tradition + "%", 130, 597.5)}
-        ctx.textAlign="right"
-        if (wealth    > 30) {ctx.fillText(wealth + "%", 670, 237.5)}
-        if (peace     > 30) {ctx.fillText(peace + "%", 670, 357.5)}
-        if (authority > 30) {ctx.fillText(authority + "%", 670, 477.5)}
-        if (progress  > 30) {ctx.fillText(progress + "%", 670, 597.5)}
+            ctx.font="50px Montserrat"
+            ctx.textAlign="center"
+            ctx.fillStyle="#222222"
+            ctx.fillText("Left / Right Axis (x): " + x_axis, 925, 1375)
+            ctx.fillText("Auth / Lib Axis (y): " + y_axis, 925, 1450)
+            ctx.fillText("Prog / Con Axis (z): " + z_axis, 925, 1525)
 
-        ctx.font="300 30px Montserrat"
-        ctx.fillText("8values.github.io", 780, 60)
-		ctx.fillText(version, 780, 90)
-        ctx.textAlign="center"
-        ctx.fillText("Economic Axis: " + document.getElementById("economic-label").innerHTML, 400, 175)
-        ctx.fillText("Diplomatic Axis: " + document.getElementById("diplomatic-label").innerHTML, 400, 295)
-        ctx.fillText("Civil Axis: " + document.getElementById("state-label").innerHTML, 400, 415)
-        ctx.fillText("Societal Axis: " + document.getElementById("society-label").innerHTML, 400, 535)
-
-        document.getElementById("banner").src = c.toDataURL();
+            document.getElementById("banner").src = c.toDataURL();
+        }
+        background.src = "./compass.png";
     }
     </script>
 </body>

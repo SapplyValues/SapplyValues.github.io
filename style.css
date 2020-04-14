@@ -66,6 +66,11 @@ li {
 a {
     font-family: inherit;
 }
+sup {
+    font-size: x-large;
+    border-bottom: 1px dotted #333333;
+    cursor: help;
+}
 img.center {
     display: block;
     margin: 1em auto;
@@ -111,73 +116,12 @@ img.center {
     cursor: not-allowed;
     margin: -4px auto;
 }
-div.axis {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-div.bar {
-    height: 36pt;
-    line-height: 36pt;
-    padding: 8pt;
-    margin-top: 4pt;
-    margin-bottom: 4pt;
-    border-width: 4px;
-    border-right-width: 1px;
-    border-top-style: solid;
-    border-bottom-style: solid;
-    border-color: #222222;
-    background-color: #eeeeee;
-    display: block;
-    width: 50%;
-}
 div.text-wrapper {
     font-family: 'Montserrat', sans-serif;
     font-size: 36pt;
     line-height: 36pt;
     color: #222222;
     display: inline-block;
-}
-div.equality {
-    background-color: #f44336;
-    text-align: left;
-    border-right-style: solid;
-}
-div.wealth {
-    background-color: #00897b;
-    text-align: right;
-    border-left-style: solid;
-}
-div.liberty {
-    background-color: #ffeb3b;
-    text-align: left;
-    border-right-style: solid;
-}
-div.authority {
-    background-color: #3f51b5;
-    text-align: right;
-    border-left-style: solid;
-}
-div.peace {
-    background-color: #03a9f4;
-    text-align: right;
-    border-left-style: solid;
-}
-div.might {
-    background-color: #ff9800;
-    text-align: left;
-    border-right-style: solid;
-}
-div.progress {
-    background-color: #9c27b0;
-    text-align: right;
-    border-left-style: solid;
-}
-div.tradition {
-    background-color: #8bc34a;
-    text-align: left;
-    border-right-style: solid;
 }
 span.weight-300 {
     font-weight: 300;
@@ -191,4 +135,5 @@ span.weight-300 {
     margin: 8pt;
     margin-left: auto;
     margin-right: auto;
+    max-width: 50%;
 }
