@@ -360,7 +360,7 @@ questions = [
         }
     },
     {
-        "question": "Autonomy of body extents even to minors, the mentally ill and serious criminals.",
+        "question": "Autonomy of body extends even to minors, the mentally ill and serious criminals.",
         "effect": {
             "econ": 0,
             "govt": 0,
