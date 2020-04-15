@@ -1,9 +1,9 @@
 questions = 
     [[//Left-Right`
         [//Right
-            "Freedom of big business is the best practical way a society can prosper.",
+            "Freedom of business is the best practical way a society can prosper.",
             "Charity is a better way of helping those in need than social welfare.",
-            "Wages are always fair, as big business knows best what a worker's labour is worth.",
+            "Wages are always fair, as employers know best what a worker's labour is worth.",
             "It is \"human nature\" to be greedy.",
             "\"Exploitation\" is an outdated term, as the struggles of 1800s capitalism doesn't exist anymore.",
             "Communism is an ideal that can never work in practice.",
@@ -20,7 +20,7 @@ questions =
             "Economic inequality is too high in the world."
         ]],[//Authority-Liberty`
         [//Authority
-            "Sometimes it is right that the government may spy on its citizens, to combat extremists and terrorists.",
+            "Sometimes it is right that the government may spy on its citizens to combat extremists and terrorists.",
             "Authority figures, if morally correct, are a good thing for society.",
             "Strength is necessary for any government to succeed.",
             "Only the government can fairly and effectively regulate organisations.",
@@ -31,7 +31,7 @@ questions =
         ],
         [//Liberty
             "The government should be less involved in the day to day life of its citizens.",
-            "Without democracy a society is nothing.",
+            "Without democracy, a society is nothing.",
             "Jury nullification should be legal.",
             "The smaller the government, the freer the people.",
             "The government should, at most, provide emergency services and law enforcement.",
@@ -46,14 +46,14 @@ questions =
             "Animals deserve certain universal rights.",
             "Gender is a social construct, not a natural state of affairs.",
             "Laws based on cultural values, rather than ethical ones, aren’t justice.",
-            "Autonomy of body extends even to minors, the mentally ill and serious criminals."
+            "Autonomy of body extends even to minors, the mentally ill, and serious criminals."
         ],
         [//Conservative
             "Homosexuality is against my values.",
             "Transgender individuals should not be able to adopt children.",
             "Drugs are harmful and should be banned.",
             "The death penalty should exist for certain crimes.",
-            "Non-violent crimes should still be punished.",
+            "Victimless crimes should still be punished.",
             "One cannot be moral without religion.",
             "Parents should hold absolute power over their children, as they are older and more experienced.",
             "Multiculturalism is bad."
