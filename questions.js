@@ -72,7 +72,7 @@ questions = [
         }
     },
     {
-        "question": "\"Exploitation\" is an outdated term, as the struggles of 1800s 10ism doesn't exist anymore.",
+        "question": "\"Exploitation\" is an outdated term, as the struggles of 1800s capitalism doesn't exist anymore.",
         "effect": {
             "econ": 10,
             "govt": 0,
@@ -80,7 +80,7 @@ questions = [
         }
     },
     {
-        "question": "Communism<sup class=\"popup\" title=\"Communism in this context being the concept of a classless, stateless and moneyless society.\">?</sup> is an ideal that can never work in practice.",
+        "question": "Communism is an ideal that can never work in practice.",
         "effect": {
             "econ": 10,
             "govt": 0,
@@ -123,7 +123,7 @@ questions = [
         "question": "The government should be less involved in the day to day life of its citizens.",
         "effect": {
             "econ": 0,
-            "govt": 10,
+            "govt": -10,
             "scty": 0
         }
     },
@@ -131,7 +131,7 @@ questions = [
         "question": "Sometimes it is right that the government may spy on its citizens, to combat extremists and terrorists.",
         "effect": {
             "econ": 0,
-            "govt": -10,
+            "govt": 10,
             "scty": 0
         }
     },
@@ -139,7 +139,7 @@ questions = [
         "question": "Authority figures, if morally correct, are a good thing for society.",
         "effect": {
             "econ": 0,
-            "govt": -10,
+            "govt": 10,
             "scty": 0
         }
     },
@@ -147,7 +147,7 @@ questions = [
         "question": "Strength is necessary for any government to succeed.",
         "effect": {
             "econ": 0,
-            "govt": -10,
+            "govt": 10,
             "scty": 0
         }
     },
@@ -155,7 +155,7 @@ questions = [
         "question": "Only the government can fairly and effectively regulate organisations.",
         "effect": {
             "econ": 0,
-            "govt": -10,
+            "govt": 10,
             "scty": 0
         }
     },
@@ -163,15 +163,15 @@ questions = [
         "question": "Without democracy a society is nothing.",
         "effect": {
             "econ": 0,
-            "govt": 10,
+            "govt": -10,
             "scty": 0
         }
     },
     {
-        "question": "Jury Nullification<sup class=\"popup\" title=\"Jury Nullification is, simply put, the act of a jury ruling a convict innocent despite the evidence proving them guilty. This is done in protest to an unfair law, but currently it's indirectly illegal to do so in most countries.\">?</sup> should be legal.",
+        "question": "Jury nullification should be legal.",
         "effect": {
             "econ": 0,
-            "govt": 10,
+            "govt": -10,
             "scty": 0
         }
     },
@@ -179,7 +179,7 @@ questions = [
         "question": "The smaller the government, the freer the people.",
         "effect": {
             "econ": 0,
-            "govt": 10,
+            "govt": -10,
             "scty": 0
         }
     },
@@ -187,7 +187,7 @@ questions = [
         "question": "Society requires structure and bureaucracy in order to function.",
         "effect": {
             "econ": 0,
-            "govt": -10,
+            "govt": 10,
             "scty": 0
         }
     },
@@ -195,7 +195,7 @@ questions = [
         "question": "Mandatory IDs should be used to ensure public safety.",
         "effect": {
             "econ": 0,
-            "govt": -10,
+            "govt": 10,
             "scty": 0
         }
     },
@@ -203,7 +203,7 @@ questions = [
         "question": "The government should, at most, provide emergency services and law enforcement.",
         "effect": {
             "econ": 0,
-            "govt": 10,
+            "govt": -10,
             "scty": 0
         }
     },
@@ -211,7 +211,7 @@ questions = [
         "question": "In times of crisis, safety becomes more important than civil liberties.",
         "effect": {
             "econ": 0,
-            "govt": -10,
+            "govt": 10,
             "scty": 0
         }
     },
@@ -219,7 +219,7 @@ questions = [
         "question": "The police was not made to protect the people, but to uphold the status-quo by force.",
         "effect": {
             "econ": 0,
-            "govt": 10,
+            "govt": -10,
             "scty": 0
         }
     },
@@ -227,7 +227,7 @@ questions = [
         "question": "State schools are a bad idea because our state shouldn't be influencing our children.",
         "effect": {
             "econ": 0,
-            "govt": 10,
+            "govt": -10,
             "scty": 0
         }
     },
@@ -235,7 +235,7 @@ questions = [
         "question": "If you have nothing to hide, you have nothing to fear.",
         "effect": {
             "econ": 0,
-            "govt": -10,
+            "govt": 10,
             "scty": 0
         }
     },
