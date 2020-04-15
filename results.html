@@ -1,76 +1,77 @@
 <head>
-<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:400,700" rel="stylesheet">
-<link href='style.css' rel='stylesheet' type='text/css'>
-<title>SapplyValues Results</title>
-<link rel="icon" type="x-icon" href="icon.png">
-<link rel="shortcut icon" type="x-icon" href="icon.png">
-<meta charset="utf-8">
-</head>
-
-<body>
-<h1>SapplyValues</h1>
-<hr>
-
-<h1>Results</h1>
-
-<img src="" id="banner"></canvas>
-<button class="button" onclick="location.href='index.html';" style="background-color: #2196f3;">Back</button> <br>
-
-<script>
-    function getQueryVariable(variable)
-    {
-           var query = window.location.search.substring(1)
-           var vars = query.split("&")
-           for (var i=0;i<vars.length;i++) {
-                   var pair = vars[i].split("=")
-                   if(pair[0] == variable) {return pair[1]}
-           }
-           return(NaN);
-    }
-
-    x_axis  = parseFloat(getQueryVariable("x"))
-    y_axis   = parseFloat(getQueryVariable("y"))
-    z_axis  = parseFloat(getQueryVariable("z"))
-
-    window.onload = function() {
-        var background = new Image();
-        background.onload = function() {
-            var c = document.createElement("canvas");
-            c.width = 1850;
-            c.height = 1600;
-            var ctx = c.getContext("2d");
-            ctx.fillStyle = "#EEEEEE"
-            ctx.fillRect(0, 0, 1850, 1600);
-            ctx.drawImage(background, 0, 0);
-
-            var dot = c.getContext("2d");
-            dot.beginPath();
-            dot.arc(200 + (1000 * (x_axis+10)/20), 1150 - (1000 * (y_axis + 10)/20), 25, 0, 2 * Math.PI);
-            dot.fillStyle = 'red';
-            dot.fill();
-            dot.stroke();
-
-            var line = c.getContext("2d");
-            line.beginPath();
-            line.moveTo(1500, 1145 - (1000 * (z_axis + 16)/32));
-            line.lineTo(1650, 1145 - (1000 * (z_axis + 16)/32));
-            line.lineWidth = 10;
-            line.strokeStyle = "red";
-            line.stroke();
-
-            ctx.font="50px Montserrat"
-            ctx.textAlign="center"
-            ctx.fillStyle="#222222"
-            ctx.fillText("Left / Right Axis (x): " + x_axis, 925, 1375)
-            ctx.fillText("Auth / Lib Axis (y): " + y_axis, 925, 1450)
-            ctx.fillText("Prog / Con Axis (z): " + z_axis, 925, 1525)
-            ctx.textAlign="right"
-            ctx.font="30px Montserrat"
-            ctx.fillText("SapplyValues.github.io", 1840, 1580)
-
-            document.getElementById("banner").src = c.toDataURL();
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:400,700" rel="stylesheet">
+    <link href='style.css' rel='stylesheet' type='text/css'>
+    <title>SapplyValues Results</title>
+    <link rel="icon" type="x-icon" href="icon.png">
+    <link rel="shortcut icon" type="x-icon" href="icon.png">
+    <meta charset="utf-8">
+    </head>
+    
+    <body>
+    <h1>SapplyValues</h1>
+    <hr>
+    
+    <h1>Results</h1>
+    
+    <img src="" id="banner"></canvas>
+    <button class="button" onclick="location.href='index.html';" style="background-color: #2196f3;">Back</button> <br>
+    
+    <script>
+        function getQueryVariable(variable)
+        {
+               var query = window.location.search.substring(1)
+               var vars = query.split("&")
+               for (var i=0;i<vars.length;i++) {
+                       var pair = vars[i].split("=")
+                       if(pair[0] == variable) {return pair[1]}
+               }
+               return(NaN);
         }
-        background.src = "./compass.png";
-    }
-    </script>
-</body>
+    
+        x_axis  = parseFloat(getQueryVariable("x"))
+        y_axis   = parseFloat(getQueryVariable("y"))
+        z_axis  = parseFloat(getQueryVariable("z"))
+    
+        window.onload = function() {
+            var background = new Image();
+            background.onload = function() {
+                var c = document.createElement("canvas");
+                c.width = 1850;
+                c.height = 1600;
+                var ctx = c.getContext("2d");
+                ctx.fillStyle = "#EEEEEE"
+                ctx.fillRect(0, 0, 1850, 1600);
+                ctx.drawImage(background, 0, 0);
+    
+                var dot = c.getContext("2d");
+                dot.beginPath();
+                dot.arc(200 + (1000 * (x_axis+10)/20), 1150 - (1000 * (y_axis + 10)/20), 25, 0, 2 * Math.PI);
+                dot.fillStyle = 'red';
+                dot.fill();
+                dot.stroke();
+    
+                var line = c.getContext("2d");
+                line.beginPath();
+                line.moveTo(1500, 1145 - (1000 * (z_axis + 16)/32));
+                line.lineTo(1650, 1145 - (1000 * (z_axis + 16)/32));
+                line.lineWidth = 10;
+                line.strokeStyle = "red";
+                line.stroke();
+    
+                ctx.font="50px Montserrat"
+                ctx.textAlign="center"
+                ctx.fillStyle="#222222"
+                ctx.fillText("Left / Right Axis (x): " + x_axis, 925, 1375)
+                ctx.fillText("Auth / Lib Axis (y): " + y_axis, 925, 1450)
+                ctx.fillText("Prog / Con Axis (z): " + z_axis, 925, 1525)
+                ctx.textAlign="right"
+                ctx.font="30px Montserrat"
+                ctx.fillText("SapplyValues.github.io", 1840, 1580)
+    
+                document.getElementById("banner").src = c.toDataURL();
+            }
+            background.src = "./compass.png";
+        }
+        </script>
+    </body>
+    
