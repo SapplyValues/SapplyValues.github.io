@@ -42,7 +42,10 @@
                 }
             }
         }
-        shuffle(qs);
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get("shuffle") == "true") {
+            shuffle(qs);
+        }
     }
     
     function init_question() {
