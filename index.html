@@ -1,19 +1,20 @@
 <head>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:400,700" rel="stylesheet">
     <link href='style.css' rel='stylesheet' type='text/css'>
-    <title>SapplyValues - Sapply Political Compass Clone</title>
+    <title>SapplyValues</title>
     <link rel="icon" type="x-icon" href="icon.png">
     <link rel="shortcut icon" type="x-icon" href="icon.png">
     <meta charset="utf-8">
-    </head>
-    <body>
+</head>
+
+<body>
     <h1>SapplyValues</h1>
     <hr>
-    <img src="" id="banner"></canvas>
+    <img src="" id="banner">
     <button class="button" onclick="location.href='instructions.html';" style="font-size:36pt;">Click here to start!</button>
     
     <h2>What is SapplyValues?</h2>
-        <p>SapplyValues is a political compass test that combines the questions of the <a href="http://sapplypoliticalcompass.com/">Sapply test</a>* with the UI of <a href="https://9axes.github.io/">9Axes</a>, which is in turn based on <a href="https://8values.github.io/">8values</a>. You will be presented by a statement, and then you will answer with your opinion on the statement, from <b>Strongly Agree</b> to <b>Strongly Disagree</b>, with each answer slightly affecting your scores. At the end of the quiz, your answers will be displayed on a political compass.<br /><br />
+        <p>SapplyValues is a political compass test that combines the questions of the <a href="http://sapplypoliticalcompass.com/">Sapply test</a>* with the UI of <a href="https://8values.github.io/">8values</a>. You will be presented by a statement, and then you will answer with your opinion on the statement, from <b>Strongly Agree</b> to <b>Strongly Disagree</b>, with each answer slightly affecting your scores. At the end of the quiz, your answers will be displayed on a political compass.<br /><br />
         * A few questions have been reworded as I feel some of them were poorly written.<br /><br />
         There are <b><u><span id="numOfQuestions"></span></u></b> questions in the test.</p>
     <h2>Why use this version?</h2>
@@ -28,13 +29,8 @@
     
     <script type="application/javascript" src="questions.js"></script>
     <script type="text/javascript">
-        var questionCount = 0;
-        for (var i = 0; i < questions.length; i++) {
-            for (var j = 0; j < questions[j].length; j++) {
-                questionCount = questionCount + questions[i][j].length;
-            }
-        }
-        document.getElementById("numOfQuestions").innerHTML = questionCount;
+        document.getElementById("numOfQuestions").innerHTML = questions.length;
+
         window.onload = function() {
             var background = new Image();
             background.onload = function() {
