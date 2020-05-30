@@ -18,9 +18,9 @@
     
     <script>
         const urlParams = new URLSearchParams(window.location.search);
-        x_axis  = parseFloat(urlParams.get("x"))
-        y_axis   = parseFloat(urlParams.get("y"))
-        z_axis  = parseFloat(urlParams.get("z"))
+        x_axis  = parseFloat(urlParams.get("right"))
+        y_axis  = parseFloat(urlParams.get("auth"))
+        z_axis  = parseFloat(urlParams.get("prog"))
     
         window.onload = function() {
             var background = new Image();
@@ -42,8 +42,8 @@
     
                 var line = c.getContext("2d");
                 line.beginPath();
-                line.moveTo(1500, 1145 - (1000 * (z_axis + 16)/32));
-                line.lineTo(1650, 1145 - (1000 * (z_axis + 16)/32));
+                line.moveTo(1500, 1145 - (1000 * (z_axis + 10)/20));
+                line.lineTo(1650, 1145 - (1000 * (z_axis + 10)/20));
                 line.lineWidth = 10;
                 line.strokeStyle = "red";
                 line.stroke();
@@ -51,12 +51,12 @@
                 ctx.font="50px Montserrat"
                 ctx.textAlign="center"
                 ctx.fillStyle="#222222"
-                ctx.fillText("Left / Right Axis (x): " + x_axis, 925, 1375)
-                ctx.fillText("Auth / Lib Axis (y): " + y_axis, 925, 1450)
-                ctx.fillText("Prog / Con Axis (z): " + z_axis, 925, 1525)
+                ctx.fillText("Left / Right Axis (x): " + x_axis, 725, 1375)
+                ctx.fillText("Auth / Lib Axis (y): " + y_axis, 725, 1450)
+                ctx.fillText("Prog / Con Axis (z): " + z_axis, 725, 1525)
                 ctx.textAlign="right"
-                ctx.font="30px Montserrat"
-                ctx.fillText("SapplyValues.github.io", 1840, 1580)
+                ctx.font="60px Montserrat"
+                ctx.fillText("SapplyValues.github.io", 1820, 1560)
     
                 document.getElementById("banner").src = c.toDataURL();
             }

@@ -1,0 +1,125 @@
+<head>
+    <meta charset="utf-8">
+    <title>SapplyValues Quiz</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:400,700" rel="stylesheet">
+    <link href='style.css' rel='stylesheet' type='text/css'>
+    <link rel="icon" type="x-icon" href="icon.png">
+    <link rel="shortcut icon" type="x-icon" href="icon.png">
+
+    <script type="application/javascript" src="questions.js"></script>
+    <script type="application/javascript" src="results_dat.js"></script>
+
+</head>
+
+<body>
+
+<h1>SapplyValues</h1>
+<hr>
+<h2 style="text-align:center;" id="question-number">Loading...</h2>
+<p class="question" id="question-text"></p>
+<button class="button" onclick="next_question(1.0)" style="background-color: #1b5e20;">Strongly Agree</button> <br>
+<button class="button" onclick="next_question(0.5)" style="background-color: #4caf50;">Agree</button> <br>
+<button class="button" onclick="next_question(0)" style="background-color: #bbbbbb;">Neutral/Unsure</button> <br>
+<button class="button" onclick="next_question(-0.5)" style="background-color: #f44336;">Disagree</button> <br>
+<button class="button" onclick="next_question(-1.0)" style="background-color: #b71c1c;">Strongly Disagree</button> <br>
+<button class="small_button" onclick="prev_question()" id="back_button">Back</button>
+<button class="small_button_off" id="back_button_off">Back</button><br>
+
+<script>
+    var scores = [0, 0, 0]; // L/R, A/L, P/C - User's scores
+    var qn = 0; // Question number
+    var answers = [];
+    var quests = [];
+    init_all_questions(quests);
+    init_question(quests);
+
+    function init_all_questions(qs) {
+        for(var i = 0; i < questions.length; i++)
+        {
+            for(var  j = 0; j < questions[i].length; j++)
+            {
+                for(var k = 0; k < questions[i][j].length; k++)
+                {
+                    var m = [i, j, k];
+                    qs.push(m);
+                }
+            }
+        }
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get("shuffle") == "true") {
+            shuffle(qs);
+        }
+    }
+
+    function init_question() {
+        var ax = quests[qn][0];
+        var rate = quests[qn][1];
+        var num = quests[qn][2];
+        document.getElementById("question-text").innerHTML = questions[ax][rate][num];
+        document.getElementById("question-number").innerHTML = "Question " + (qn + 1) + " of " + (quests.length);
+        if (qn == 0) {
+            document.getElementById("back_button").style.display = 'none';
+            document.getElementById("back_button_off").style.display = 'block';
+        } else {
+            document.getElementById("back_button").style.display = 'block';
+            document.getElementById("back_button_off").style.display = 'none';
+        }
+
+    }
+
+    function shuffle(array) {
+      var currentIndex = array.length, temporaryValue, randomIndex;
+
+      // While there remain elements to shuffle...
+      while (0 !== currentIndex) {
+
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+
+        // And swap it with the current element.
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+      }
+
+      return array;
+    }
+
+    function next_question(mult) {
+        var ax = quests[qn][0];
+        var rate = quests[qn][1];
+        var num = quests[qn][2];
+        scores[ax] += mult*(rate == 0?1:-1);
+        answers[qn] = mult;
+        qn++;
+        if (qn < quests.length) {
+            init_question();
+        } else {
+            results();
+        }
+    }
+    function prev_question() {
+        if (qn == 0) {
+            return;
+        }
+        qn--;
+        var ax = quests[qn][0];
+        var rate = quests[qn][1];
+        var num = quests[qn][2];
+        scores[ax] -= answers[qn]*(rate == 0?1:-1);
+        init_question();
+    }
+    function calc_score(scores, ax) {
+        return scores[ax]/(questions[ax][0].length + questions[ax][1].length);
+    }
+    function results() {
+        location.href = `results.html`
+            + `?x=${(10 * calc_score(scores, 0)).toFixed(1)}`
+            + `&y=${(10 * calc_score(scores, 1)).toFixed(1)}`
+            + `&z=${(16 * calc_score(scores, 2)).toFixed(1)}`
+    }
+</script>
+
+</body>
