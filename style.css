@@ -16,7 +16,7 @@ body {
 p {
     color: #444444;
     font-family: 'Roboto', sans-serif;
-    font-size: 16pt;
+    font-size: 16pt !important;
     line-height: 1;
     margin: 4pt;
 }
