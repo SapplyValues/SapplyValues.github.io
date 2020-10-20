@@ -146,6 +146,9 @@ img.center {
     margin: -2px auto;
     cursor: pointer;
 }
+.green_button {
+    background-color: #4caf50;
+}
 .small_button, .small_button_off {
     background-color: #333;
     font-family: 'Montserrat', sans-serif;
@@ -168,6 +171,22 @@ img.center {
     border: 2px solid #888;
     cursor: not-allowed;
     margin: -4px auto;
+}
+.button:disabled {
+    background-color: #ddd;
+    font-family: 'Montserrat', sans-serif;
+    border: 2px solid #888;
+    border-radius: 8pt;
+    color: #888;
+    padding: 8pt;
+    width: 50%;
+    min-width: 500pt;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 24pt;
+    margin: -2px auto;
+    cursor: not-allowed;
 }
 div.text-wrapper {
     font-family: 'Montserrat', sans-serif;

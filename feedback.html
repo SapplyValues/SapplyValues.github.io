@@ -136,18 +136,20 @@
         } else if (current.questionType === "customText") {
             $("#answers").append($(`<input type="text" id="text" class="text_input"> <br>`));
 
-            var btn = $(`<button class="button" id="go" onclick="next_question(getActiveText());" style="background-color:#4caf50; display: none;">Next!</button> <br>`);
+            var btn = $(`<button disabled class="button green_button" id="go" onclick="next_question(getActiveText());">Next!</button> <br>`);
             $("#answers").append(btn);
 
             createButton({"label":"Refuse / Don't know","color":"#a9a9a9","effect":null});
 
             $("#text").change(function(){
                 if ( getActiveText().length > 0 ) {
-                    $("#go").show()
+                    $("#go").prop('disabled', false)
                 } else {
-                    $("#go").hide()
+                    $("#go").prop('disabled', true)
                 }
             });
+
+            $("#text").focus();
         }
 
 
