@@ -120,19 +120,21 @@
         } else if (current.questionType === "customNumber") {
             $("#answers").append($(`<input type="tel" id="number" class="num_input" maxlength="${current.range[1].toString().length}" min="${current.range[0]}" max="${current.range[1]}"> <br>`));
 
-            var btn = $(`<button class="button" id="go" onclick="next_question(getActiveNumber());" style="background-color:#4caf50; display: none;">Next!</button> <br>`);
+            var btn = $(`<button disabled class="button green_button" id="go" onclick="next_question(getActiveNumber());">Next!</button> <br>`);
             $("#answers").append(btn);
 
             createButton({"label":"Refuse","color":"#a9a9a9","effect":null});
 
-            $("#number").change(function(){
+            $("#text").on("input", function(){
                 var nr = Number(getActiveNumber());
                 if ( (current.range[0] <= nr) && (nr => current.range[1]) ) {
-                    $("#go").show()
+                    $("#go").prop('disabled', false)
                 } else {
-                    $("#go").hide()
+                    $("#go").prop('disabled', true)
                 }
             });
+            
+            $("#number").focus();
         } else if (current.questionType === "customText") {
             $("#answers").append($(`<input type="text" id="text" class="text_input"> <br>`));
 
