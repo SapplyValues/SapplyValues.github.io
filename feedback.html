@@ -125,7 +125,7 @@
 
             createButton({"label":"Refuse","color":"#a9a9a9","effect":null});
 
-            $("#text").on("input", function(){
+            $("#number").on("input", function(){
                 var nr = Number(getActiveNumber());
                 if ( (current.range[0] <= nr) && (nr => current.range[1]) ) {
                     $("#go").prop('disabled', false)
