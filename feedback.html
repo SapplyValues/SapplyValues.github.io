@@ -141,7 +141,7 @@
 
             createButton({"label":"Refuse / Don't know","color":"#a9a9a9","effect":null});
 
-            $("#text").change(function(){
+            $("#text").on("input", function(){
                 if ( getActiveText().length > 0 ) {
                     $("#go").prop('disabled', false)
                 } else {
