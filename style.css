@@ -57,6 +57,9 @@ h1 {
     margin-top: 0pt;
     margin-bottom: 0pt;
 }
+#svgHeader {
+	display: none;
+}
 h2 {
     color: #333333;
     font-family: 'Montserrat', sans-serif;
@@ -209,4 +212,55 @@ span.weight-300 {
     margin-right: auto;
     max-width: 50%;
 	min-width: 500pt;
+}
+
+@media screen and (orientation:portrait) {
+	body {
+		width: auto !important;
+		border-width: 0px !important;  
+	}
+	
+	.title {
+		display: none;
+	}
+	
+    #svgHeader {
+		display: block !important;
+    }
+
+	.svgHeader {
+		color: #222222;
+		font-family: 'Montserrat', sans-serif;
+		text-align: center;
+		margin-top: 0pt;
+		margin-bottom: 0pt;
+		font-weight: bold;
+        text-anchor: middle;
+	}
+	
+	#banner {
+		min-width: 0px;
+		max-width: 100%;
+		border-width: 1px;
+	}
+	
+	.button, .button:disabled, .text_input, .num_input, .selection {
+		min-width: 0px;
+		max-width: 100%;
+		width: 100%;
+		font-size: 1.5em;
+	}
+	
+	h2 {
+		font-size: 1.5em;
+		line-height: initial
+	}
+
+    p.question {
+        min-height: 224px !important;
+        min-width: 0px;
+		max-width: 100%;
+		width: auto;
+		font-size: 1.75em;
+    }
 }
