@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: sapplyvalues.github.io
+Token: 6faaeacbd08ae04fd3defd7fa4ebb8329f55472e99899cbd03c85dfc5a73f8fe
