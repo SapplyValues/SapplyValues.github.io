@@ -16,7 +16,7 @@
     <hr>
     <img src="" id="banner">
     <button class="button" onclick="location.href='instructions.html';">Click here to start!</button>
-    
+
     <h2>What is SapplyValues?</h2>
         <p>SapplyValues is a political compass test that combines the questions of the <a href="http://sapplypoliticalcompass.com/">Sapply test</a>* with the UI of <a href="https://8values.github.io/">8values</a>. You will be presented by a statement, and then you will answer with your opinion on the statement, from <b>Strongly Agree</b> to <b>Strongly Disagree</b>, with each answer slightly affecting your scores. At the end of the quiz, your answers will be displayed on a political compass.<br /><br />
         * A few questions have been reworded as I feel some of them were poorly written.</br></br>
@@ -31,8 +31,10 @@
 	<h2>Privacy notice</h2>
     <p>At the end of the test, you will be given the option to fill out information about how you describe yourself politcally. There will be 3 options. The first will take you to a small survey and will record your answers to that along with the results. The second will just record your results. The third will not record anything. All information recorded is totally anonymous, and is being used for a research project by the creator of <a href="https://altvalues.github.io/">AltValues</a>.</p>
     <h2>Legal notice</h2>
-    <p>The 8values and 9Axes project licenses grant the rights to "modify, merge, publish, distribute" the software as long as "The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software." The included notice can be found <a href="LICENSE.txt">here</a>. This project is released under the same license.</p>
-    
+    <p>Copyright (C) 2017-2019 8values</p>
+    <p>Copyright (C) 2020-2021 SapplyValues</p>
+    <p>This project is licensed under the Expat/MIT license. You can find a copy of the license <a href="LICENSE">here</a> or on the <a href="https://github.com/SapplyValues/SapplyValues.github.io/blob/master/LICENSE">GitHub repo</a>.</p>
+
     <script type="application/javascript" src="questions.js"></script>
     <script type="text/javascript">
         document.getElementById("numOfQuestions").innerHTML = questions.length;
@@ -47,7 +49,7 @@
                 ctx.fillStyle = "#EEEEEE"
                 ctx.fillRect(0, 0, 1850, 1300);
                 ctx.drawImage(background, 0, 0);
-    
+
                 document.getElementById("banner").src = c.toDataURL();
             }
             background.src = "./compass.png";
