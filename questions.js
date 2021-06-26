@@ -3,7 +3,7 @@ questions =  [
     {"id": 1, "question": "Charity is a better way of helping those in need than social welfare.", "effects": {"right": 1}},
     {"id": 2, "question": "Wages are always fair, as employers know best what a worker's labour is worth.", "effects": {"right": 1}},
     {"id": 3, "question": "It is \"human nature\" to be greedy.", "effects": {"right": 1}},
-    {"id": 4, "question": "\"Exploitation\" is an outdated term, as the struggles of 1800s capitalism doesn't exist anymore.", "effects": {"right": 1}},
+    {"id": 4, "question": "\"Exploitation\" is an outdated term, as the struggles of 1800s capitalism don't exist anymore.", "effects": {"right": 1}},
     {"id": 5, "question": "Communism is an ideal that can never work in practice.", "effects": {"right": 1}},
     {"id": 6, "question": "Taxation of the wealthy is a bad idea, society would be better off without it.", "effects": {"right": 1}},
     {"id": 7, "question": "The harder you work, the more you progress up the social ladder.", "effects": {"right": 1}},
