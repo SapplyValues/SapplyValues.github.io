@@ -7,7 +7,7 @@ questions =  [
     {"id": 5, "question": "Communism is an ideal that can never work in practice.", "effects": {"right": 1}},
     {"id": 6, "question": "Taxation of the wealthy is a bad idea, society would be better off without it.", "effects": {"right": 1}},
     {"id": 7, "question": "The harder you work, the more you progress up the social ladder.", "effects": {"right": 1}},
-    {"id": 8, "question": "Organisations and corporations cannot be trusted and need regulating by the government.", "effects": {"right": -1}},
+    {"id": 8, "question": "Organisations and corporations cannot be trusted and need to be regulated by the government.", "effects": {"right": -1}},
     {"id": 9, "question": "A government that provides for everyone is an inherently good idea.", "effects": {"right": -1}},
     {"id": 10, "question": "The current welfare system should be expanded to further combat inequality.", "effects": {"right": -1}},
     {"id": 11, "question": "Land should not be a commodity to be bought and sold.", "effects": {"right": -1}},
